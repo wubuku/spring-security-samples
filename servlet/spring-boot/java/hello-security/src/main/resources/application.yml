@@ -4,6 +4,8 @@ logging:
     #org.springframework.boot.autoconfigure.security: DEBUG
     org.springframework.security: DEBUG
     #org.springframework.boot: DEBUG
+    org.springframework.jdbc: DEBUG  # 添加这行来查看SQL查询
+    org.springframework.security.authentication: DEBUG  # 添加这行来查看认证详情
 
 spring:
   datasource:
@@ -13,17 +15,17 @@ spring:
     password: 
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none #update
     defer-datasource-initialization: true
   h2:
     console:
       enabled: true
       path: /h2-console
 
-  security:
-    user:
-      name: user
-      password: password
+  # security:
+  #   user:
+  #     name: user
+  #     password: password
 
   sql:
     init:

@@ -1,9 +1,30 @@
-<html xmlns:th="https://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 <head>
     <title>Hello Security!</title>
 </head>
 <body>
     <h1>Hello Security</h1>
-    <a th:href="@{/logout}">Log Out</a>
+    
+    <div>
+        <p>当前用户: <span sec:authentication="name">未知</span></p>
+        <p>权限列表: <span sec:authentication="principal.authorities">无</span></p>
+    </div>
+
+    <div>
+        <h2>可用功能:</h2>
+        <ul>
+            <li sec:authorize="hasRole('ADMIN')">
+                <a th:href="@{/admin}">管理员页面</a>
+            </li>
+            <li sec:authorize="hasRole('USER')">
+                <a th:href="@{/user}">用户页面</a>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <a th:href="@{/logout}">退出登录</a>
+    </div>
 </body>
 </html>
