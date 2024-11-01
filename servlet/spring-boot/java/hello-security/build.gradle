@@ -1,7 +1,7 @@
 plugins {
 	alias(libs.plugins.org.springframework.boot)
 	alias(libs.plugins.io.spring.dependency.management)
-	id "nebula.integtest" version "8.2.0"
+	id "nebula.integtest" version "9.6.3"
 	id 'java'
 }
 
@@ -11,11 +11,23 @@ repositories {
 	maven { url "https://repo.spring.io/snapshot" }
 }
 
-
+/*
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
+<dependency>
+    <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+    <scope>runtime</scope>
+</dependency>
+*/
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'com.h2database:h2'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'

@@ -2,7 +2,7 @@ plugins {
 	id 'java'
 	alias(libs.plugins.org.springframework.boot)
 	alias(libs.plugins.io.spring.dependency.management)
-	id "nebula.integtest" version "8.2.0"
+	id "nebula.integtest" version "9.6.3"
 }
 
 repositories {
