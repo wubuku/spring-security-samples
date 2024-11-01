@@ -2,7 +2,7 @@ logging:
   level:
     root: INFO
     #org.springframework.boot.autoconfigure.security: DEBUG
-    #org.springframework.security: DEBUG
+    org.springframework.security: DEBUG
     #org.springframework.boot: DEBUG
 
 spring:
@@ -28,3 +28,10 @@ spring:
   sql:
     init:
       mode: always
+
+  session:
+    store-type: jdbc
+    jdbc:
+      initialize-schema: always
+      schema: classpath:org/springframework/session/jdbc/schema-@@platform@@.sql
+      table-name: SPRING_SESSION
